@@ -1,0 +1,16 @@
+﻿@model Person
+
+<div class="card mb-2" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.FirstName @Model.LastName</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Employee</h6>
+        <p class="card-text">This is some information about employee @Model.FirstName @Model.LastName</p>
+        
+        <a asp-action="Details" asp-route-id="@Model.Id">Details</a>
+        
+        @if (!string.IsNullOrWhiteSpace(Model.Email))
+        {
+            <a href="mailto:@Model.Email" class="card-link">@Model.Email</a>
+        }
+    </div>
+</div>
